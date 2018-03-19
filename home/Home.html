@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trang chủ</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="home.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap.min.js"></script>
+	<script type="text/javascript" src="bootstrap.min.css"></script>
+
+</head>
+<body>
+	<div class="container">
+		<!--top toolbar-->
+		<div class="toolbar">
+			<div class="search_wrap">
+                    <div class="search">
+                        <form method="POST" action="https://shipantoan.vn/hanh-trinh-van-don.html" class="search_order_journey">
+                            <img src="https://shipantoan.vn/images/icon_search.png">
+                            <input type="text" class="search_code" name="search_code" placeholder="Nhập mã vận đơn..." value="">
+                        </form>
+                    </div>
+                    <div class="view_way" onclick="submit_form();">
+                        <div class="view_way_img">
+                            <img src="https://shipantoan.vn/images/icon_xemhanhtrinh.png">
+                        </div>
+                        <span>Xem hành trình</span>
+                    </div>
+                </div>
+		</div>
+		<div class="menu_wrap">
+            <nav class="navbar navbar-default">
+                <div class="menu_inner">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="https://shipantoan.vn/images/logo.png">
+                            <span>shipantoan</span>
+                        </a>
+                    </div>
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu1" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div id="menu1" class="navbar-collapse collapse ">
+                            <ul id="" class="menu">
+                                <li><a href="#">TRANG CHỦ</a></li>
+                                <li><a href="#">BẢNG GIÁ</a></li>
+                                <li><a href="#">GIỚI THIỆU</a></li>
+                                <li><a href="#">TIN TỨC</a></li>
+                                <li><a href="#">ĐĂNG NHẬP</a></li>
+                                <li><a href="#">ĐĂNG KÝ</a></li>
+                            </ul>
+                        </div>
+                </div>
+                </nav>
+            </div>
+	</div>
+</body>
+</html>

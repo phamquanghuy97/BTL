@@ -3,15 +3,18 @@
 <head>
 	<title>Trang chủ</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="home.css">
+	<link rel="stylesheet" type="text/css" href="css/home.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript" src="bootstrap.min.js"></script>
-	<script type="text/javascript" src="bootstrap.min.css"></script>
-
+	 <link rel="stylesheet" type="text/css" href="../home/css/bootstrap.min.css">
+	 <script type="text/javascript" src="../home/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="container">
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgrpXDFssq2O8Acb6qNUVY6X7vy4zvu-w"></script>
+	<div class="container-fluid">
 		<!--top toolbar-->
 		<div class="toolbar">
 			<div class="search_wrap">
@@ -28,37 +31,257 @@
                         <span>Xem hành trình</span>
                     </div>
                 </div>
+                <div class="hotline">
+                    <p>HOTLINE: <span>0963841012</span></p>
+            	</div>
 		</div>
+		<!--menu-->
 		<div class="menu_wrap">
-            <nav class="navbar navbar-default">
+            <nav class="navbar navbar-default" style="background-color: #47483d">
                 <div class="menu_inner">
                     <div class="logo">
                         <a href="/">
-                            <img src="https://shipantoan.vn/images/logo.png">
-                            <span>shipantoan</span>
+                            <img src="images/logo.png">
+                            <span>shipAZ.com</span>
                         </a>
                     </div>
-                        <div class="navbar-header">
+                        <!--<div class="navbar-header">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu1" aria-expanded="false" aria-controls="navbar">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                        </div>
+                        </div> -->
                         <div id="menu1" class="navbar-collapse collapse ">
                             <ul id="" class="menu">
                                 <li><a href="#">TRANG CHỦ</a></li>
                                 <li><a href="#">BẢNG GIÁ</a></li>
                                 <li><a href="#">GIỚI THIỆU</a></li>
                                 <li><a href="#">TIN TỨC</a></li>
-                                <li><a href="#">ĐĂNG NHẬP</a></li>
-                                <li><a href="#">ĐĂNG KÝ</a></li>
+                                <li><a href="#" style="color: #269def"><strong>ĐĂNG NHẬP</strong></a></li>
+                                <li><a href="#" style="color: #269def"><strong>ĐĂNG KÝ</strong></a></li>
                             </ul>
                         </div>
                 </div>
-                </nav>
-            </div>
+            </nav>
+        </div>
+        <!--Content-->
+		<!--slideshow-->
+			<div id="content">
+				<div class="slideshow-container">
+				  	<div class="mySlides fade">
+					    <img src="images/home.jpg" style="width:100%">
+					    <div class="text1">
+					    	<p>SHIPAZ.COM đến với dịch vụ của chúng tôi, bạn hoàn toàn có thể yên tâm ngồi tại nhà, truy vào vào trang web shipaz.com để lựa chọn các mặt hàng mua sắm, dịch vụ chuyển đồ nhanh chóng tiện ích, giá cả phù hợp. Chúng tôi cam kết đem đến cho bạn những tiện ích tốt nhất của dịch vụ chuyển hàng. An toàn và Tin cậy - Đó là tiêu chí hoạt động của công ty chúng tôi. Hãy trải nghiệm shipAZ.com và cùng cảm nhận những tiện ích bất tận nào!!!</p>
+					    </div>
+				  	</div>
+				  	<div class="mySlides fade">
+					    <img src="images/bn.png" style="width:100%">
+					    <div class="text2"><p>SHIPAZ.COM đến với dịch vụ của chúng tôi, bạn hoàn toàn có thể yên tâm ngồi tại nhà, truy vào vào trang web shipaz.com để lựa chọn các mặt hàng mua sắm, dịch vụ chuyển đồ nhanh chóng tiện ích, giá cả phù hợp. Chúng tôi cam kết đem đến cho bạn những tiện ích tốt nhất của dịch vụ chuyển hàng. An toàn và Tin cậy - Đó là tiêu chí hoạt động của công ty chúng tôi. Hãy trải nghiệm shipAZ.com và cùng cảm nhận những tiện ích bất tận nào!!!</p></div>
+				  	</div>
+					</div>
+					<br>
+
+					<div style="text-align: center">
+						<span class="dot" onclick="curentSlide(0)"></span>
+						<span class="dot" onclick="curentSlide(1)"></span>
+					</div>
+					</div>
+			<script type="text/javascript">
+			  //khai báo biến slideIndex đại diện cho slide hiện tại
+			  var slideIndex;
+			  // KHai bào hàm hiển thị slide
+			  function showSlides() {
+			      var i;
+			      var slides = document.getElementsByClassName("mySlides");
+			      var dots = document.getElementsByClassName("dot");
+			      for (i = 0; i < slides.length; i++) {
+			         slides[i].style.display = "none";  
+			      }
+			      for (i = 0; i < dots.length; i++) {
+			          dots[i].className = dots[i].className.replace(" active", "");
+			      }
+			 
+			      slides[slideIndex].style.display = "block";  
+			      dots[slideIndex].className += " active";
+			      //chuyển đến slide tiếp theo
+			      slideIndex++;
+			      //nếu đang ở slide cuối cùng thì chuyển về slide đầu
+			      if (slideIndex > slides.length - 1) {
+			        slideIndex = 0
+			      }    
+			      //tự động chuyển đổi slide sau 5s
+			      setTimeout(showSlides, 5000);
+			  }
+			  //mặc định hiển thị slide đầu tiên 
+			  showSlides(slideIndex = 0);
+			 
+			 
+			  function currentSlide(n) {
+			    showSlides(slideIndex = n);
+			  }
+		</script>
+
+		<!---		
+		<div class="chat-box">
+			<div class="open"> Chat trực tuyến!
+				<div class="box">
+					<br>
+						<img src="images/support.png" style="width: 100px; height:100px">
+					<br>
+					<div class="chatroom">
+	    			<form action="/action_page.php">
+	      				<input type="text" placeholder="Nhập tin nhắn..." name="Chat">
+	      				<button id="btn" type="submit"><i class="fa fa-paper-plane"> Send</i></button>
+	    			</form>
+	  				</div>
+				</div>
+			</div>
+		</div>
+		-->
+		<!--search lộ trình-->
+		<div class="container-fluid" id="container" style="background-color: #c7c7c7">
+		<div class="row">
+			<div class="col-md-4" style="background-color: #48d07a">
+				<!-- search input box -->
+				<form>
+					<div class="form-group input-group" style="width: 300px">
+					    <input type="text" id="search_location" class="form-control" placeholder="Search location">
+					    <div class="input-group-btn">
+					        <button class="btn btn-default get_map" type="submit" style="height: 34px">
+					            Search
+					        </button>
+					    </div>
+					</div>
+				</form>
+				<!-- display selected location information -->
+				<p>Address: <input type="text" class="search_addr" size="45"></p>
+				<p>Latitude: <input type="text" class="search_latitude" size="30"></p>
+				<p>Longitude: <input type="text" class="search_longitude" size="30"></p>
+			</div>
+			<div class="col-md-8" style="background-color: #4285f4">
+				<div id="map">
+					<script>
+					var geocoder;
+					var map;
+					var marker;
+
+					/*
+					 * Google Map with marker
+					 */
+					function initialize() {
+					    var initialLat = $('.search_latitude').val();
+					    var initialLong = $('.search_longitude').val();
+					    initialLat = initialLat?initialLat:21.0078534;
+					    initialLong = initialLong?initialLong:105.8216241;
+
+					    var latlng = new google.maps.LatLng(initialLat, initialLong);
+					    var options = {
+					        zoom: 14,
+					        center: latlng,
+					        mapTypeId: google.maps.MapTypeId.ROADMAP
+					    };
+
+					    map = new google.maps.Map(document.getElementById("map"), options);
+
+					    geocoder = new google.maps.Geocoder();
+
+					    marker = new google.maps.Marker({
+					        map: map,
+					        draggable: true,
+					        position: latlng
+					    });
+
+					    google.maps.event.addListener(marker, "dragend", function () {
+					        var point = marker.getPosition();
+					        map.panTo(point);
+					        geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
+					            if (status == google.maps.GeocoderStatus.OK) {
+					                map.setCenter(results[0].geometry.location);
+					                marker.setPosition(results[0].geometry.location);
+					                $('.search_addr').val(results[0].formatted_address);
+					                $('.search_latitude').val(marker.getPosition().lat());
+					                $('.search_longitude').val(marker.getPosition().lng());
+					            }
+					        });
+					    });
+
+					}
+
+					$(document).ready(function () {
+					    //load google map
+					    initialize();
+					    
+					    /*
+					     * autocomplete location search
+					     */
+					    var PostCodeid = '#search_location';
+					    $(function () {
+					        $(PostCodeid).autocomplete({
+					            source: function (request, response) {
+					                geocoder.geocode({
+					                    'address': request.term
+					                }, function (results, status) {
+					                    response($.map(results, function (item) {
+					                        return {
+					                            label: item.formatted_address,
+					                            value: item.formatted_address,
+					                            lat: item.geometry.location.lat(),
+					                            lon: item.geometry.location.lng()
+					                        };
+					                    }));
+					                });
+					            },
+					            select: function (event, ui) {
+					                $('.search_addr').val(ui.item.value);
+					                $('.search_latitude').val(ui.item.lat);
+					                $('.search_longitude').val(ui.item.lon);
+					                var latlng = new google.maps.LatLng(ui.item.lat, ui.item.lon);
+					                marker.setPosition(latlng);
+					                initialize();
+					            }
+					        });
+					    });
+					    
+					    /*
+					     * Point location on google map
+					     */
+					    $('.get_map').click(function (e) {
+					        var address = $(PostCodeid).val();
+					        geocoder.geocode({'address': address}, function (results, status) {
+					            if (status == google.maps.GeocoderStatus.OK) {
+					                map.setCenter(results[0].geometry.location);
+					                marker.setPosition(results[0].geometry.location);
+					                $('.search_addr').val(results[0].formatted_address);
+					                $('.search_latitude').val(marker.getPosition().lat());
+					                $('.search_longitude').val(marker.getPosition().lng());
+					            } else {
+					                alert("Geocode was not successful for the following reason: " + status);
+					            }
+					        });
+					        e.preventDefault();
+					    });
+
+					    //Add listener to marker for reverse geocoding
+					    google.maps.event.addListener(marker, 'drag', function () {
+					        geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
+					            if (status == google.maps.GeocoderStatus.OK) {
+					                if (results[0]) {
+					                    $('.search_addr').val(results[0].formatted_address);
+					                    $('.search_latitude').val(marker.getPosition().lat());
+					                    $('.search_longitude').val(marker.getPosition().lng());
+					                }
+					            }
+					        });
+					    });
+					});
+					</script>
+				</div>
+			</div>
+		</div>
+		</div>
 	</div>
+	
 </body>
 </html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trang chủ</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="../home/css/bootstrap.min.css">
+     <script type="text/javascript" src="../home/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="map.js"></script>
+     
+</head>
+<body>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgrpXDFssq2O8Acb6qNUVY6X7vy4zvu-w"></script>
+    <div class="container-fluid">
+        <!--top toolbar-->
+        <div class="toolbar">
+            <div class="search_wrap">
+                    <div class="search">
+                        <form method="POST" action="https://shipantoan.vn/hanh-trinh-van-don.html" class="search_order_journey">
+                            <img src="https://shipantoan.vn/images/icon_search.png">
+                            <input type="text" class="search_code" name="search_code" placeholder="Nhập mã vận đơn..." value="">
+                        </form>
+                    </div>
+                    <div class="view_way" onclick="submit_form();">
+                        <div class="view_way_img">
+                            <img src="https://shipantoan.vn/images/icon_xemhanhtrinh.png">
+                        </div>
+                        <span>Xem hành trình</span>
+                    </div>
+                </div>
+                <div class="hotline">
+                    <p>HOTLINE: <span>0963841012</span></p>
+                </div>
+        </div>
+        <!--menu-->
+        <div class="menu_wrap">
+            <nav class="navbar navbar-default" style="background-color: #47483d">
+                <div class="menu_inner">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="images/logo.png">
+                            <span>shipAZ.com</span>
+                        </a>
+                    </div>
+                        <!--<div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu1" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div> -->
+                        <div id="menu1" class="navbar-collapse collapse ">
+                            <ul id="" class="menu">
+                                <li><a href="Home.html">TRANG CHỦ</a></li>
+                                <li><a href="#">BẢNG GIÁ</a></li>
+                                <li><a href="#intro_wrap">GIỚI THIỆU</a></li>
+                                <li><a href="#">TIN TỨC</a></li>
+                            </ul>
+                        </div>
+                </div>
+            </nav>
+        </div>
+        <!--Content-->
+        <!--slideshow-->
+            <div id="content">
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <img src="images/home.jpg" style="width:100%">
+                        <div class="text1">
+                            <p>SHIPAZ.COM đến với dịch vụ của chúng tôi, bạn hoàn toàn có thể yên tâm ngồi tại nhà, truy vào vào trang web shipaz.com để lựa chọn các mặt hàng mua sắm, dịch vụ chuyển đồ nhanh chóng tiện ích, giá cả phù hợp. Chúng tôi cam kết đem đến cho bạn những tiện ích tốt nhất của dịch vụ chuyển hàng. An toàn và Tin cậy - Đó là tiêu chí hoạt động của công ty chúng tôi. Hãy trải nghiệm shipAZ.com và cùng cảm nhận những tiện ích bất tận nào!!!</p>
+                        </div>
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/bn.png" style="width:100%">
+                        <div class="text2"><p>SHIPAZ.COM đến với dịch vụ của chúng tôi, bạn hoàn toàn có thể yên tâm ngồi tại nhà, truy vào vào trang web shipaz.com để lựa chọn các mặt hàng mua sắm, dịch vụ chuyển đồ nhanh chóng tiện ích, giá cả phù hợp. Chúng tôi cam kết đem đến cho bạn những tiện ích tốt nhất của dịch vụ chuyển hàng. An toàn và Tin cậy - Đó là tiêu chí hoạt động của công ty chúng tôi. Hãy trải nghiệm shipAZ.com và cùng cảm nhận những tiện ích bất tận nào!!!</p></div>
+                    </div>
+                    </div>
+                    <br>
+
+                    <div style="text-align: center">
+                        <span class="dot" onclick="curentSlide(0)"></span>
+                        <span class="dot" onclick="curentSlide(1)"></span>
+                    </div>
+                    </div>
+            <script type="text/javascript">
+              //khai báo biến slideIndex đại diện cho slide hiện tại
+              var slideIndex;
+              // KHai bào hàm hiển thị slide
+              function showSlides() {
+                  var i;
+                  var slides = document.getElementsByClassName("mySlides");
+                  var dots = document.getElementsByClassName("dot");
+                  for (i = 0; i < slides.length; i++) {
+                     slides[i].style.display = "none";  
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                      dots[i].className = dots[i].className.replace(" active", "");
+                  }
+             
+                  slides[slideIndex].style.display = "block";  
+                  dots[slideIndex].className += " active";
+                  //chuyển đến slide tiếp theo
+                  slideIndex++;
+                  //nếu đang ở slide cuối cùng thì chuyển về slide đầu
+                  if (slideIndex > slides.length - 1) {
+                    slideIndex = 0
+                  }    
+                  //tự động chuyển đổi slide sau 5s
+                  setTimeout(showSlides, 5000);
+              }
+              //mặc định hiển thị slide đầu tiên 
+              showSlides(slideIndex = 0);
+             
+             
+              function currentSlide(n) {
+                showSlides(slideIndex = n);
+              }
+            </script>
+
+        
+        <!--search lộ trình-->
+        <div class="container-fluid" id="container" style="background-color: #c7c7c7">
+        <div class="row">
+            <div class="col-md-4" style="background-color: #48d07a">
+                <!-- search input box -->
+                <form>
+                    <div class="form-group input-group" style="width: 300px">
+                        <input type="text" id="search_location" class="form-control" placeholder="Search location">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default get_map" type="submit" style="height: 34px">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <!-- display selected location information -->
+                <p>Address: <input type="text" class="search_addr" size="45"></p>
+                <p>Latitude: <input type="text" class="search_latitude" size="30"></p>
+                <p>Longitude: <input type="text" class="search_longitude" size="30"></p>
+            </div>
+            <div class="col-md-8" style="background-color: #4285f4">
+                <div id="map">
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+
+        <!--gioi thieu-->
+            <div id="intro_wrap">
+            <div class="intro_inner mw_page">
+            <div class="intro_one">
+                <p>Shipaz.vn là mô hình giao nhận trung gian, liên kết với các hãng vận chuyển hàng đầu để cung cấp dịch vụ giao nhận hàng hóa cho các shop bán hàng online. Nổi bật&nbsp; trong tính năng của Shipaz là khả năng hạn chế rủi ro chuyển hoàn qua hình thức đặt cọc và vận chuyển bất kỳ đơn hàng nào nhỏ lẻ.</p>
+
+                <p style="text-align:center"><span style="font-size:16px"><br><strong>SHIPAZ.VN – HẠN CHẾ RỦI RO CHUYỂN HOÀN CHO CHỦ SHOP</strong></span></p>
+
+                <p>&nbsp;</p>
+
+                <table border="0" cellpadding="0" cellspacing="0" style="width:100%">
+                    <tbody>
+                        <tr>
+                            <td style="width:50%">
+                            <h3 style="font-size:20px"><strong style="font-weight: 700px">AN TOÀN VÀ ĐẢM BẢO</strong></h3>
+                            </td>
+                            <td>&nbsp;</td>
+                            <td style="width:50%">
+                            <h3 style="font-size:20px"><strong style="font-weight: 700px">TIỆN LỢI TRONG KHÂU XỬ LÝ</strong></h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:50%">
+                            <h3 style="font-size: 16px"><img alt="" src="images/M0.png" style="float:left; height:100px; margin-right:10px; width:100px"><strong>ĐẢM BẢO GIAO DỊCH</strong></h3>
+
+                            <p>Hạn chế rủi ro chuyển hoàn qua tính năng đặt cọc giao dịch</p>
+                            </td>
+                            <td>&nbsp;</td>
+                            <td style="width:50%">
+                            <h3 style="font-size: 16px"><img alt="" src="images/autochiphi.png" style="float:left; height:100px; margin-right:10px; width:100px"><strong>TỰ ĐỘNG TÍNH CHI PHÍ</strong></h3>
+
+                            <p>Xác định chi phí vận chuyển hàng hóa trước khi giao hàng</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:50%">
+                            <h3 style="font-size: 16px"><img alt="" src="images/m1.png" style="float:left; height:100px; margin-right:10px; width:100px"><strong>THU HỘ TIỀN (COD)</strong></h3>
+
+                            <p>Tạo uy tín, niềm tin cho doanh nghiệp, giúp đẩy mạnh sức mua của khách hàng và gia tăng cơ hội bán</p>
+                            </td>
+                            <td>&nbsp;</td>
+                            <td style="width:50%">
+                            <h3 style="font-size: 16px"><img alt="" src="images/chitiet.png" style="float:left; height:100px; margin-right:10px; width:100px"><strong>THEO DÕI CHI TIẾT HÀNH TRÌNH </strong></h3>
+
+                            <p>Hệ thống quản lý theo dõi chi tiết hành trình đơn hàng</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:50%">
+                            <h3 style="font-size: 16px"><img alt="" src="images/nhanhangnoigui.png" style="float:left; height:100px; margin-right:10px; width:100px"><strong>NHẬN HÀNG TẬN NƠI GỬI</strong></h3>
+
+                            <p>Ngay khi tạo lập đơn hàng, bưu tá sẽ tới nhận hàng tại địa điểm kho hoặc cửa hàng của shop</p>
+                            </td>
+                            <td>&nbsp;</td>
+                            <td style="width:50%">
+                            <h3><img alt="" src="images/giaohang.png" style="float:left; height:100px; margin-right:10px; width:100px"><strong>GIAO HÀNG TOÀN QUỐC</strong></h3>
+
+                            <p>SHIPAZ vận chuyển hàng hóa tới 63 tỉnh thành trên toàn quốc</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:50%">&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td style="width:50%">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                            <p style="text-align: center;"><span style="font-size:20px"><strong>TÍNH NĂNG CHI TIẾT SHIPAZ</strong></span></p>
+
+                <table border="0" cellpadding="0" cellspacing="0" style="width:100%">
+                    <tbody>
+                        <tr>
+                            <td style="width:50%">
+                            <h3><strong>GIẢI PHÁP MẠNH MẼ</strong></h3>
+                            </td>
+                            <td>&nbsp;</td>
+                            <td style="width:50%">
+                            <h3><strong>HỆ THỐNG CHUYÊN NGHIỆP</strong></h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <ul>
+                                <li>Thao tác đơn giản, nhanh chóng</li>
+                                <li>Quản lý hành trình, trạng thái từng đơn hàng</li>
+                                <li>Các khâu vận chuyển tích hợp tự động</li>
+                            </ul>
+                            </td>
+                            <td>&nbsp;</td>
+                            <td>
+                            <ul>
+                                <li>Qúa trình tạo vận đơn &nbsp;theo lộ trình khoa học</li>
+                                <li>Phối hợp tự động với bộ phận vận chuyển hàng hóa</li>
+                                <li>Thống kê vận đơn cách chi tiết khoa học, bộ lọc tìm kiếm tối ưu</li>
+                            </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                            <p style="text-align: center;">&nbsp;</p>
+
+                            <p style="text-align: center;"><span style="font-size:20px"><strong>ĐỐI TÁC TIN CẬY</strong></span></p><br>
+
+                            <p style="text-align:center">Các đối tác vận chuyển hàng đầu của Shipaz: Viettelpost, Kerry Express, Giao hàng tiết kiệm</p>
+
+                            <p>&nbsp;</p>
+
+                            <p style="text-align:center">
+                            <img alt="" src="images/partner_viettelpost.png" style="height:93px; ">
+                            <img alt="" src="images/partner_kerry.png" style="height:93px; ">
+                            <img alt="" src="images/partner_ghtk.png" style="height:93px; ">
+                            </p>
+
+                            <p>&nbsp;</p>
+
+                            <p style="text-align:center"><strong><a href="#"><span style="color:#FF0000"><span style="font-size:16px">ĐĂNG KÝ NGAY</span></span></a></strong></p>
+
+            </div>
+        </div>
+        </div>
+<!--footer-->
+            <div class="footer_wrap">
+                <div class="footer">
+                    <div class="sat_intro">
+                        <div class="f_logo">
+                            <a href="/">
+                                <img src="images/logo_white.png">
+                                <span>shipaz.com</span>
+                            </a>
+                        </div>
+                        <p>© 2018 - Sản phẩm của HuyPQ: Cổng giao nhận vận chuyển giao hàng &amp; đảm bảo thanh toán (đặt cọc bằng thẻ cào) . Thời gian làm việc từ 8:30 - 17:30 từ thứ 2 đến thứ 7.
+                        <br><br><br>
+                        Giấy phép hoạt động cung ứng dịch vụ trung gian thanh toán số 21/GP/NHNN do Ngân hàng nhà nước cấp.
+                        </p>
+                        <br>
+                        <p><a href="#"><img alt="" title="" src="images/dangky.jpg"></a></p>
+                    </div>
+                    <div class="f_link">
+                        <p class="f_title">LINK TỚI TRANG</p>
+                        <a href="#">Bảng giá vận chuyển</a>
+                        <a href="#">Đăng ký dịch vụ</a>
+                        <a href="#">Giới thiệu</a>
+                        <a href="#">Chính sách &amp; Quy định chung</a>
+                        <a href="#">Thỏa thuận người dùng</a>
+                        <a href="#"> Chính sách bảo mật thông tin</a>
+                        <a href="#">Hướng dẫn dịch vụ</a>
+                        <a href="#">Quy chế hoạt động</a>
+                        <a href="#">Quy trình giải quyết tranh chấp, khiếu nại</a>
+                    </div>
+                    <div class="f_news">
+                        <p class="f_title">TIN TỨC</p>
+                                                <a href="#">Thông báo nghỉ Tết Nguyên Đán 2018</a>
+                                                <a href="#">Thông báo nghỉ Tết Dương Lịch 2018</a>
+                                    </div>
+                    <div class="f_contact">
+                        <p class="f_title">LIÊN HỆ</p>
+                        <p><span style="font-family: Roboto Bold;">Công ty Cổ phần HuyPQ</span></p>
+                        <p><span style="font-family: Roboto Bold;">ĐKKD:</span> 0102713659 - Đăng ký 04/04/2008 –<span style="font-family: Roboto Bold;">Người đại diện:</span> Phạm Quang Huy</p>
+                        <p><span style="font-family: Roboto Bold;">Trụ sở Hà Nội:</span> số 175 - Tây Sơn - Quận Đống Đa - Hà Nội</p>
+                        <p><span style="font-family: Roboto Bold;">Chi nhánh tại TPHCM:</span> Tòa nhà FLC, Quận 1, TP HCM</p>
+                        <p><span style="font-family: Roboto Bold;">Hotline: 0963841012</span></p>
+                        <p><span style="font-family: Roboto Bold;">Email:</span> <a href="#" style="float: none;">admin@shipaz.com</a><a href="https://www.facebook.com/hotboy5g" style="float: none;">  Fb.com/shipaz.com/ </a></p>
+                    </div>
+                </div>
+
+            <div class="footer-bottom">
+                <p><span class="icon-phone" style="color: #ffe013;font-size: 16px"><i class="fa fa-phone-square"></i></span> Hotline từ  8h30 – 22h: <span style="color: #ffe013;font-size: 16px"><b style="font-weight: 700">0963841012</b></span></p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+.price_search_wrap {
+    width: 100%;
+    float: left;
+    height: 355px;
+    padding: 40px 0 22px 0;
+}
+.price_title {
+    width: 100%;
+    color: #fff;
+    font-family: UTM AvoBold;
+    font-size: 29px;
+    text-align: center;
+}
+.price_search {
+    margin: 0 auto;
+    width: 100%;
+    padding: 14px 9px;
+    background: #40393f;
+    margin-top: 38px;
+}
+.pro_search_inner {
+    width: 100%;
+    background: #fff;
+    border-radius: 3px;
+    padding: 12px;
+    color: #333333;
+    font-family: Roboto Bold;
+    font-size: 14px;
+}
+form{
+	display: block;
+}
+.fix-search-inner-gr1 .form-group.col-md-4 {
+    margin-bottom: 12px;
+}
+optgroup {
+    font-weight: 700;
+}

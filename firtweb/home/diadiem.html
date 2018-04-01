@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XXX</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/banggia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="../home/css/bootstrap.min.css">
+     <script type="text/javascript" src="../home/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="map.js"></script>
+</head>
+<body>
+<div class="price_search_wrap">
+        <p class="price_title">TÍNH PHÍ VẬN CHUYỂN TỰ ĐỘNG</p>
+        <div class="price_search mw_page">
+        <div class="pro_search_inner fix-search-inner">
+            <form class="form-inline" action="bang-gia/ket-qua.html#price_title" method="POST" onsubmit="return validSend()">
+                <div class="fix-search-inner-gr1">
+                    <div class="form-group col-md-4">
+                        <select class="form-control select_district_from" name="district_from">
+                            <optgroup>
+                                <option value="">Nơi đi</option>
+                            </optgroup>
+                                                                <optgroup label="Hà Nội ">
+                                                                        <option value="1180">Quận Ba Đình </option>
+                                                                                <option value="1220">Quận Cầu Giấy </option>
+                                                                                <option value="1120">Quận Hai Bà Trưng </option>
+                                                                                <option value="1100">Quận Hoàn Kiếm </option>
+                                                                                <option value="1270">Quận Hoàng Mai </option>
+                                                                                <option value="1250">Quận Long Biên </option>
+                                                                                <option value="1200">Quận Thanh Xuân </option>
+                                                                                <option value="1240">Quận Tây Hồ </option>
+                                                                                <option value="1150">Quận Đống Đa </option>
+                                                                                <option value="1510">Thành Phố Hà Đông </option>
+                                                                                <option value="1260">Quận Nam Từ Liêm </option>
+                                                                                <option value="1540">Thị Xã Sơn Tây </option>
+                                                                                <option value="1280">Quận Bắc Từ Liêm </option>
+                                                                                <option value="1360">Huyện Đông Anh </option>
+                                                                                <option value="1310">Huyện Gia Lâm </option>
+                                                                                <option value="1547">Huyện Ba Vì </option>
+                                                                                <option value="1576">Huyện Mỹ Đức </option>
+                                                                                <option value="1529">Huyện Hoài Đức </option>
+                                                                                <option value="1561">Huyện Chương Mỹ </option>
+                                                                                <option value="1420">Huyện Mê Linh </option>
+                                                                                <option value="1580">Huyện Phú Xuyên </option>
+                                                                                <option value="1536">Huyện Phúc Thọ </option>
+                                                                                <option value="1557">Huyện Quốc Oai </option>
+                                                                                <option value="1390">Huyện Sóc Sơn </option>
+                                                                                <option value="1567">Huyện Thanh Oai </option>
+                                                                                <option value="1340">Huyện Thanh Trì </option>
+                                                                                <option value="1585">Huyện Thường Tín </option>
+                                                                                <option value="1553">Huyện Thạch Thất </option>
+                                                                                <option value="1533">Huyện Đan Phượng </option>
+                                                                                <option value="1571">Huyện Ứng Hòa </option>
+                                                                        </optgroup>
+                                                                    
+                                                            </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <select class="form-control select_district_from" name="district_from">
+                            <optgroup>
+                                <option value="">Nơi đến</option>
+                            </optgroup>
+                                                                <optgroup label="Hà Nội ">
+                                                                        <option value="1180">Quận Ba Đình </option>
+                                                                                <option value="1220">Quận Cầu Giấy </option>
+                                                                                <option value="1120">Quận Hai Bà Trưng </option>
+                                                                                <option value="1100">Quận Hoàn Kiếm </option>
+                                                                                <option value="1270">Quận Hoàng Mai </option>
+                                                                                <option value="1250">Quận Long Biên </option>
+                                                                                <option value="1200">Quận Thanh Xuân </option>
+                                                                                <option value="1240">Quận Tây Hồ </option>
+                                                                                <option value="1150">Quận Đống Đa </option>
+                                                                                <option value="1510">Thành Phố Hà Đông </option>
+                                                                                <option value="1260">Quận Nam Từ Liêm </option>
+                                                                                <option value="1540">Thị Xã Sơn Tây </option>
+                                                                                <option value="1280">Quận Bắc Từ Liêm </option>
+                                                                                <option value="1360">Huyện Đông Anh </option>
+                                                                                <option value="1310">Huyện Gia Lâm </option>
+                                                                                <option value="1547">Huyện Ba Vì </option>
+                                                                                <option value="1576">Huyện Mỹ Đức </option>
+                                                                                <option value="1529">Huyện Hoài Đức </option>
+                                                                                <option value="1561">Huyện Chương Mỹ </option>
+                                                                                <option value="1420">Huyện Mê Linh </option>
+                                                                                <option value="1580">Huyện Phú Xuyên </option>
+                                                                                <option value="1536">Huyện Phúc Thọ </option>
+                                                                                <option value="1557">Huyện Quốc Oai </option>
+                                                                                <option value="1390">Huyện Sóc Sơn </option>
+                                                                                <option value="1567">Huyện Thanh Oai </option>
+                                                                                <option value="1340">Huyện Thanh Trì </option>
+                                                                                <option value="1585">Huyện Thường Tín </option>
+                                                                                <option value="1553">Huyện Thạch Thất </option>
+                                                                                <option value="1533">Huyện Đan Phượng </option>
+                                                                                <option value="1571">Huyện Ứng Hòa </option>
+                                                                        </optgroup>
+                                                                    
+                                                            </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <select class="form-control ship_type" name="ship_type">
+                            <option value="">Chọn gói chuyển phát</option>
+                            <option value="HOATOC">Hỏa tốc</option>
+                            <option value="CHUYENPHATNHANH">Chuyển phát nhanh</option>
+                            <option value="CHUYENPHATTHUONG">Chuyển phát thường</option> 
+                            <option value="NOITINH">Nội tỉnh</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="fix-search-inner-gr2">
+                    <div class="form-group col-md-4">
+                        <input type="text" name="weight" class="form-control weight ship_weight ship_weight_fix" placeholder="Khối lượng(Gram)">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input type="text" class="form-control weight money_collect" name="money_collect" placeholder="Nhập tiền thu hộ (nếu có). VD: 10,000,000" value="">
+                    </div>
+                    <div class="form-group col-md-4"><button type="submit" class="btn btn-default btn-lg">XEM PHÍ VẬN CHUYỂN</button></div>
+                </div>                
+            </form>
+        </div>
+    </div>
+    
+</div>
+</body>
+</html>

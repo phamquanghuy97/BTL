@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Đăng Nhập</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="../home/css/bootstrap.min.css">
+     <script type="text/javascript" src="../home/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="map.js"></script>
+     <style type="text/css">
+        body {font-family: Arial, Helvetica, sans-serif;}
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .btn1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 80px 10px 50px 535px;
+            border: 1px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 30px;
+            height: 50px;
+            font-size: 16px;
+        }
+        .btn2{
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+            padding-top: 60px;
+        }
+
+     
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+      
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+
+
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+        }
+
+        @-webkit-keyframes animatezoom {
+            from {-webkit-transform: scale(0)} 
+            to {-webkit-transform: scale(1)}
+        }
+            
+        @keyframes animatezoom {
+            from {transform: scale(0)} 
+            to {transform: scale(1)}
+        }
+
+        
+        @media screen and (max-width: 300px) {
+            span.psw {
+               display: block;
+               float: none;
+            }
+            .cancelbtn {
+               width: 100%;
+            }
+        }
+
+     </style>
+    
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="toolbar">
+                <div class="search_wrap">
+                        <div class="search">
+                            <form method="POST" action="https://shipantoan.vn/hanh-trinh-van-don.html" class="search_order_journey">
+                                <img src="https://shipantoan.vn/images/icon_search.png">
+                                <input type="text" class="search_code" name="search_code" placeholder="Nhập mã vận đơn..." value="">
+                            </form>
+                        </div>
+                        <div class="view_way" onclick="submit_form();">
+                            <div class="view_way_img">
+                                <img src="https://shipantoan.vn/images/icon_xemhanhtrinh.png">
+                            </div>
+                            <span>Xem hành trình</span>
+                        </div>
+                    </div>
+                    <div class="hotline">
+                        <p>HOTLINE: <span>0963841012</span></p>
+                    </div>
+            </div>
+            <!--menu-->
+            <div class="menu_wrap">
+                <nav class="navbar navbar-default" style="background-color: #47483d">
+                    <div class="menu_inner">
+                        <div class="logo">
+                            <a href="/">
+                                <img src="images/logo.png">
+                                <span>shipAZ.com</span>
+                            </a>
+                        </div>
+                            <!--<div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu1" aria-expanded="false" aria-controls="navbar">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div> -->
+                            <div id="menu1" class="navbar-collapse collapse ">
+                                <ul id="" class="menu">
+                                    <li><a href="Home.html">TRANG CHỦ</a></li>
+                                    <li><a href="#">BẢNG GIÁ</a></li>
+                                    <li><a href="#intro_wrap">GIỚI THIỆU</a></li>
+                                    <li><a href="#">TIN TỨC</a></li>
+                                    <li><a href="login.html" style="color: #269def"><strong>ĐĂNG NHẬP</strong></a></li>
+                                    <li><a href="signup.html" style="color: #269def"><strong>ĐĂNG KÝ</strong></a></li>
+                                </ul>
+                            </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="login">
+                <button class="btn1" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+                <div id="id01" class="modal">
+                  
+                  <form class="modal-content animate" id="login" action="/action_page.php" method="POST">
+                    <div class="imgcontainer">
+                      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                    </div>
+
+                    <div class="container">
+                      <label for="uname"><b>Username</b></label>
+                      <input type="text" placeholder="Enter Username" name="uname" required>
+
+                      <label for="psw"><b>Password</b></label>
+                      <input type="password" placeholder="Enter Password" name="psw" required>
+                        
+                      <button class="btn2" type="submit">Login</button>
+                      <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                      </label>
+                    </div>
+
+                    <div class="container" style="background-color:#f1f1f1">
+                      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                      <span class="psw">Forgot <a href="#">password?</a></span>
+                    </div>
+                  </form>
+                </div>
+
+                <script>
+                // Get the modal
+                var modal = document.getElementById('id01');
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+
+                $(document).ready(function()
+{  
+                //khai báo nút submit form
+                var submit   = $("button[type='submit']");
+                 
+                //khi thực hiện kích vào nút Login
+                submit.click(function()
+                {
+                    //khai báo các biến
+                    var username = $("input[name='uname']").val(); //lấy giá trị input tài khoản
+                    var password = $("input[name='psw']").val(); //lấy giá trị input mật khẩu
+                     
+                    //kiem tra xem da nhap tai khoan chua
+                    if(username == ''){
+                        alert('Vui lòng nhập tài khoản');
+                        return false;
+                    }
+                     
+                    //kiem tra xem da nhap mat khau chua
+                    if(password == ''){
+                        alert('Vui lòng nhập mật khẩu');
+                        return false;
+                    }
+                     
+                    //lay tat ca du lieu trong form login
+                    var data = $('form#login').serialize();
+                    //su dung ham $.ajax()
+                    $.ajax({
+                    type : 'POST', //kiểu post
+                    url  : 'submit.php', //gửi dữ liệu sang trang submit.php
+                    data : data,
+                    success :  function(data)
+                           {                       
+                                if(data == 'false')
+                                {
+                                    alert('Sai tên hoặc mật khẩu');
+                                }else{
+                                    $('#content').html(data);
+                                }
+                           }
+                    });
+                    return false;
+                });
+            });
+                </script>
+            </div>
+
+            <div class="footer_wrap">
+                <div class="footer-bottom">
+                    <p><span class="icon-phone" style="color: #ffe013;font-size: 16px"><i class="fa fa-phone-square"></i></span> Hotline từ  8h30 – 22h: <span style="color: #ffe013;font-size: 16px"><b style="font-weight: 700">0963841012</b></span></p>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

@@ -11,8 +11,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	 <link rel="stylesheet" type="text/css" href="../home/css/bootstrap.min.css">
 	 <script type="text/javascript" src="../home/js/bootstrap.min.js"></script>
+<<<<<<< HEAD
 	 <script type="text/javascript" src="map.js"></script>
 	 
+=======
+>>>>>>> 52f85361fee74e6ceaa858c465833d1797f7eb0d
 </head>
 <body>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgrpXDFssq2O8Acb6qNUVY6X7vy4zvu-w"></script>
@@ -123,9 +126,31 @@
 			  function currentSlide(n) {
 			    showSlides(slideIndex = n);
 			  }
+<<<<<<< HEAD
 			</script>
 
 		
+=======
+		</script>
+
+		<!---		
+		<div class="chat-box">
+			<div class="open"> Chat trực tuyến!
+				<div class="box">
+					<br>
+						<img src="images/support.png" style="width: 100px; height:100px">
+					<br>
+					<div class="chatroom">
+	    			<form action="/action_page.php">
+	      				<input type="text" placeholder="Nhập tin nhắn..." name="Chat">
+	      				<button id="btn" type="submit"><i class="fa fa-paper-plane"> Send</i></button>
+	    			</form>
+	  				</div>
+				</div>
+			</div>
+		</div>
+		-->
+>>>>>>> 52f85361fee74e6ceaa858c465833d1797f7eb0d
 		<!--search lộ trình-->
 		<div class="container-fluid" id="container" style="background-color: #c7c7c7">
 		<div class="row">
@@ -148,11 +173,130 @@
 			</div>
 			<div class="col-md-8" style="background-color: #4285f4">
 				<div id="map">
+<<<<<<< HEAD
 					
+=======
+					<script>
+					var geocoder;
+					var map;
+					var marker;
+
+					/*
+					 * Google Map with marker
+					 */
+					function initialize() {
+					    var initialLat = $('.search_latitude').val();
+					    var initialLong = $('.search_longitude').val();
+					    initialLat = initialLat?initialLat:21.0078534;
+					    initialLong = initialLong?initialLong:105.8216241;
+
+					    var latlng = new google.maps.LatLng(initialLat, initialLong);
+					    var options = {
+					        zoom: 14,
+					        center: latlng,
+					        mapTypeId: google.maps.MapTypeId.ROADMAP
+					    };
+
+					    map = new google.maps.Map(document.getElementById("map"), options);
+
+					    geocoder = new google.maps.Geocoder();
+
+					    marker = new google.maps.Marker({
+					        map: map,
+					        draggable: true,
+					        position: latlng
+					    });
+
+					    google.maps.event.addListener(marker, "dragend", function () {
+					        var point = marker.getPosition();
+					        map.panTo(point);
+					        geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
+					            if (status == google.maps.GeocoderStatus.OK) {
+					                map.setCenter(results[0].geometry.location);
+					                marker.setPosition(results[0].geometry.location);
+					                $('.search_addr').val(results[0].formatted_address);
+					                $('.search_latitude').val(marker.getPosition().lat());
+					                $('.search_longitude').val(marker.getPosition().lng());
+					            }
+					        });
+					    });
+
+					}
+
+					$(document).ready(function () {
+					    //load google map
+					    initialize();
+					    
+					    /*
+					     * autocomplete location search
+					     */
+					    var PostCodeid = '#search_location';
+					    $(function () {
+					        $(PostCodeid).autocomplete({
+					            source: function (request, response) {
+					                geocoder.geocode({
+					                    'address': request.term
+					                }, function (results, status) {
+					                    response($.map(results, function (item) {
+					                        return {
+					                            label: item.formatted_address,
+					                            value: item.formatted_address,
+					                            lat: item.geometry.location.lat(),
+					                            lon: item.geometry.location.lng()
+					                        };
+					                    }));
+					                });
+					            },
+					            select: function (event, ui) {
+					                $('.search_addr').val(ui.item.value);
+					                $('.search_latitude').val(ui.item.lat);
+					                $('.search_longitude').val(ui.item.lon);
+					                var latlng = new google.maps.LatLng(ui.item.lat, ui.item.lon);
+					                marker.setPosition(latlng);
+					                initialize();
+					            }
+					        });
+					    });
+					    
+					    /*
+					     * Point location on google map
+					     */
+					    $('.get_map').click(function (e) {
+					        var address = $(PostCodeid).val();
+					        geocoder.geocode({'address': address}, function (results, status) {
+					            if (status == google.maps.GeocoderStatus.OK) {
+					                map.setCenter(results[0].geometry.location);
+					                marker.setPosition(results[0].geometry.location);
+					                $('.search_addr').val(results[0].formatted_address);
+					                $('.search_latitude').val(marker.getPosition().lat());
+					                $('.search_longitude').val(marker.getPosition().lng());
+					            } else {
+					                alert("Geocode was not successful for the following reason: " + status);
+					            }
+					        });
+					        e.preventDefault();
+					    });
+
+					    //Add listener to marker for reverse geocoding
+					    google.maps.event.addListener(marker, 'drag', function () {
+					        geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
+					            if (status == google.maps.GeocoderStatus.OK) {
+					                if (results[0]) {
+					                    $('.search_addr').val(results[0].formatted_address);
+					                    $('.search_latitude').val(marker.getPosition().lat());
+					                    $('.search_longitude').val(marker.getPosition().lng());
+					                }
+					            }
+					        });
+					    });
+					});
+					</script>
+>>>>>>> 52f85361fee74e6ceaa858c465833d1797f7eb0d
 				</div>
 			</div>
 		</div>
 		</div>
+<<<<<<< HEAD
 
 
 
@@ -327,6 +471,8 @@
 				<p><span class="icon-phone" style="color: #ffe013;font-size: 16px"><i class="fa fa-phone-square"></i></span> Hotline từ  8h30 – 22h: <span style="color: #ffe013;font-size: 16px"><b style="font-weight: 700">0963841012</b></span></p>
 			</div>
 		</div>
+=======
+>>>>>>> 52f85361fee74e6ceaa858c465833d1797f7eb0d
 	</div>
 	
 </body>
